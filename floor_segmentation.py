@@ -1,12 +1,13 @@
 import os
 import sys
-import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 import tensorflow as tf
+import matplotlib.pyplot as plt
+from keras.models import model_from_json
 from efficientnet.tfkeras import EfficientNetB4
-from segmentation_models.losses import DiceLoss, BinaryFocalLoss
 from segmentation_models.metrics import IOUScore, FScore
+from segmentation_models.losses import DiceLoss, BinaryFocalLoss
 
 os.environ["CUDA_VISIBLE_DEVICES"]="-1"
 
@@ -14,8 +15,13 @@ def get_model():
     dice_loss = DiceLoss()
     focal_loss = BinaryFocalLoss()
     total_loss = dice_loss + (1 * focal_loss)
-    model = tf.keras.models.load_model('./model/floor_segmentation_model.h5', custom_objects={'dice_loss_plus_1binary_focal_loss': total_loss, 'iou_score' : IOUScore(threshold=0.5), 'f1-score': FScore(threshold=0.5)})
-    return model
+    with open('./model/floor_segmentation_model.json', 'r') as json_file:
+        json_savedModel= json_file.read()
+    #load the model architecture 
+    model_j = tf.keras.models.model_from_json(json_savedModel, custom_objects={'dice_loss_plus_1binary_focal_loss': total_loss, 'iou_score' : IOUScore(threshold=0.5), 'f1-score': FScore(threshold=0.5)})
+    model_j.load_weights('./model/floor_segmentation_model.h5')
+    # model = tf.keras.models.load_model('./model/floor_segmentation_model.h5', custom_objects={'dice_loss_plus_1binary_focal_loss': total_loss, 'iou_score' : IOUScore(threshold=0.5), 'f1-score': FScore(threshold=0.5)})
+    return model_j
 
 
 def floor_segmentation(model, image_path):
