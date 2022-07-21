@@ -61,7 +61,7 @@ def floor_segmentation(model, image_path):
     image = image.convert("RGBA")
     pixdata_image = image.load()
 
-    # making white pixels transparent 
+    # making white pixels transparent
     for y in range(height):
         for x in range(width):
             if pixdata_mask[x, y] == (255, 255, 255, 255):

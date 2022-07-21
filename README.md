@@ -1,8 +1,9 @@
-
 # Floor Segmentation
 
 Deep Learning based floor segmentation model that may be used to make floor pixels transparent. A useful tool for deploying and testing new floor designs in real time.
+
 ## Demo
+
 <table>
   <tr>
     <td>Image</td>
@@ -38,46 +39,44 @@ Deep Learning based floor segmentation model that may be used to make floor pixe
     conda activate floor_segmentation
     pip install -r requirements.txt
 ```
-    
+
 ## Running Tests
 
 To run tests, run the following command
 
 ```bash
-    python floor_segmentation.py "image_path" 
+    python floor_segmentation.py "image_path"
     example: python floor_segmentation.py ./images/1.jpg
 ```
-
-
 
 ## Training
 
 #### In the train directory yout will find:
 
-***1-floor_data_filtering.ipynb:*** This code filters floor images and their respective masks from the original dataset.
+**_1-floor_data_filtering.ipynb:_** This code filters floor images and their respective masks from the original dataset.
 
-***2-mask_fixing.ipynb:*** Some of the masks include gray pixles that we dront want to convert them to black pixels so we are only left with black and whote pixels.
+**_2-mask_fixing.ipynb:_** Some of the masks include gray pixles that we don't want, so we convert them to black pixels. We are then left with only black and whote pixels.
 
-***3-csv_generator.ipynb:*** Crates csv files for train and valid data with rgb and mask paths.
+**_3-csv_generator.ipynb:_** Crates csv files for train and valid data with rgb and mask paths.
 
-***4-data_generator.py:*** Custom data generator that is used to train the model.
+**_4-data_generator.py:_** Custom data generator that is used to train the model.
 
-***5-train.ipynb:*** Sample code to train the floor segmentation model.
+**_5-train.ipynb:_** Sample code to train the floor segmentation model.
 
 ## Dataset
+
 [ADE20K](https://groups.csail.mit.edu/vision/datasets/ADE20K/)
+
 ## Used By
 
 This project is used by the following company:
 
 - Shiftwave Technologies
 
-
 ## License
 
 [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/)
 
-
 ## References
 
- - [Segmentation Models](https://github.com/qubvel/segmentation_models)
+- [Segmentation Models](https://github.com/qubvel/segmentation_models)
