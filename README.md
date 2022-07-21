@@ -37,6 +37,7 @@ Deep Learning based floor segmentation model that can be used to make floor pixe
 ```bash
     conda create --name floor_segmentation
     conda activate floor_segmentation
+    git clone https://github.com/uzairmughal20/Floor-Segmentation.git
     pip install -r requirements.txt
 ```
 
