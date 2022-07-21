@@ -1,6 +1,6 @@
 # Floor Segmentation
 
-Deep Learning based floor segmentation model that may be used to make floor pixels transparent. A useful tool for deploying and testing new floor designs in real time.
+Deep Learning based floor segmentation model that can be used to make floor pixels transparent. A useful tool for deploying and testing new floor designs in real time.
 
 ## Demo
 
