@@ -49,7 +49,21 @@ To run tests, run the following command
 ```
 
 
+
 ## Training
+
+#### In the train directory yout will find:
+
+***1-floor_data_filtering.ipynb:*** This code filters floor images and their respective masks from the original dataset.
+
+***2-mask_fixing.ipynb:*** Some of the masks include gray pixles that we dront want to convert them to black pixels so we are only left with black and whote pixels.
+
+***3-csv_generator.ipynb:*** Crates csv files for train and valid data with rgb and mask paths.
+
+***4-data_generator.py:*** Custom data generator that is used to train the model.
+
+***5-train.ipynb:*** Sample code to train the floor segmentation model.
+
 ## Dataset
 [ADE20K](https://groups.csail.mit.edu/vision/datasets/ADE20K/)
 ## Used By
