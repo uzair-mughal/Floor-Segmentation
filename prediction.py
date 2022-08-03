@@ -1,7 +1,7 @@
 import os
 import sys
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageOps
 import tensorflow as tf
 import matplotlib.pyplot as plt
 from keras.models import model_from_json
@@ -35,6 +35,7 @@ def floor_segmentation(model, image_path):
 
     # loading RGB image
     image = Image.open(image_path).convert('RGB')
+    image = ImageOps.exif_transpose(image)
     wid, hei = image.size
     image = image.resize((target_size[0], target_size[1]), Image.ANTIALIAS)
     image_arr = np.array(image)
