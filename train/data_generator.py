@@ -64,3 +64,4 @@ class DataGenerator(tf.keras.utils.Sequence):
 
     def __len__(self):
         return self.n // self.batch_size
+        

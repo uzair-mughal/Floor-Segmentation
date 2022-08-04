@@ -1,0 +1,5 @@
+ADE20K_2021_17_01/
+ADE20K_FloorData/
+train/checkpoints/
+train/training.csv
+train/validation.csv
