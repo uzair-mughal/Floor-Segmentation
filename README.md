@@ -46,8 +46,8 @@ Deep Learning based floor segmentation model that can be used to make floor pixe
 To run tests, run the following command
 
 ```bash
-    python floor_segmentation.py "image_path"
-    example: python floor_segmentation.py ./images/1.jpg
+    python prediction.py "image_path"
+    example: python prediction.py ./images/1.jpg
 ```
 
 ## Training
